@@ -1,0 +1,21 @@
+name: Build APK
+on: [push]
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Setup Godot
+        run: |
+          wget https://downloads.tuxfamily.org/godotengine/4.6.1/Godot_v4.6.1-stable_linux.x86_64.zip
+          unzip Godot_v4.6.1-stable_linux.x86_64.zip
+          chmod +x Godot_v4.6.1-stable_linux.x86_64
+      - name: Build APK
+        run: |
+          mkdir -p build
+          echo "APK будет собран позже" > build/app.txt
+      - name: Upload APK
+        uses: actions/upload-artifact@v4
+        with:
+          name: TelegramBypass
+          path: build/

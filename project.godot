@@ -1,0 +1,10 @@
+; Engine configuration file.
+[application]
+config/name="TelegramBypass"
+run/main_scene="res://Main.tscn"
+config/icon="res://icon.png"
+
+[display]
+window/size/width=800
+window/size/height=600
+window/stretch/mode="viewport"
